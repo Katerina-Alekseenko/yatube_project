@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} {{ title_group_list }} {% endblock %}
+{% block title %} Записи сообщества Лев Толстой – зеркало русской революции {% endblock %}
 {% block content %}
   <div class="container py-5">
     <h1> {{ title_group_list }} </h1>
@@ -18,10 +18,10 @@
           </li>
         </ul>
         <p> {{ post.text }} </p>
-          {% if post.group %}
-            <a href="{% url 'posts:group_list' post.group.slug %}">
-              все записи группы</a>
-          {% endif %}
+        {% if post.group %}
+          <a href="{% url 'posts:group_list' post.group.slug %}">
+            все записи группы</a>
+        {% endif %}
         {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}
     </article>

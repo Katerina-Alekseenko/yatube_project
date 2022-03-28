@@ -3,7 +3,6 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
-Group = get_user_model()
 
 
 class Group(models.Model):
@@ -11,8 +10,8 @@ class Group(models.Model):
     slug = models.SlugField(max_length=200)
     description = models.TextField()
 
-    def _str_(self):
-        return self.title
+    def _str_(self) -> str:
+        return f'self.title'
 
 
 class Post(models.Model):
@@ -31,6 +30,3 @@ class Post(models.Model):
         on_delete = models.CASCADE,
         related_name = 'group'
     )
-
-
-# Create your models here.
