@@ -23,8 +23,3 @@ def group_posts(request, slug):
     }
     template = 'posts/group_list.html'
     return render(request, template, context)
-
-
-def group_list(request, slug):
-    template = 'posts/group_list.html'
-    return render(request, template)
